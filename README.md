@@ -1,4 +1,4 @@
-# GAOS
+# GAOS: Governed Agentic Operating System
 
 [![lint](https://github.com/nickearnshaw/gaos/actions/workflows/lint.yml/badge.svg)](https://github.com/nickearnshaw/gaos/actions/workflows/lint.yml)
 
@@ -29,4 +29,4 @@ Sections 3 to 6 of the specification are under the Community Specification Licen
 
 ## Name
 
-`GAOS` is a working token and may be replaced.
+`GAOS` stands for Governed Agentic Operating System: governed, because every irreversible action sits behind a human decision; agentic, because the work is done by agents; operating system, because the specification describes the environment the agents run inside rather than any one agent. It is a working token and may be replaced.
