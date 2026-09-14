@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Mechanical checks for R-24 and R-25 of the GAOS specification, plus
+// Mechanical checks for R-24 and R-25 of the Governed Agentic Operating Model specification, plus
 // cross-checks that fixtures/ and conformance/ have not drifted from it.
 // Plain Node, ES module, no dependencies. Exits non-zero on any finding.
 
@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = resolve(here, "..");
-const specPath = resolve(root, "spec", "00-gaos-engineering-spec.md");
+const specPath = resolve(root, "spec", "00-governed-agentic-operating-model.md");
 const lines = readFileSync(specPath, "utf8").split("\n");
 
 const findings = [];

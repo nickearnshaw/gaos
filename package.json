@@ -1,6 +1,6 @@
 {
-  "name": "gaos",
-  "version": "0.2.0-draft",
+  "name": "governed-agentic-operating-model",
+  "version": "0.2.1-draft",
   "private": true,
   "type": "module",
   "scripts": {

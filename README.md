@@ -1,8 +1,8 @@
-# GAOS: Governed Agentic Operating System
+# Governed Agentic Operating Model
 
-[![lint](https://github.com/nickearnshaw/gaos/actions/workflows/lint.yml/badge.svg)](https://github.com/nickearnshaw/gaos/actions/workflows/lint.yml)
+[![lint](https://github.com/nickearnshaw/governed-agentic-operating-model/actions/workflows/lint.yml/badge.svg)](https://github.com/nickearnshaw/governed-agentic-operating-model/actions/workflows/lint.yml)
 
-A short specification for running one person's work with AI agents such that no agent can take an irreversible action. It is an integration of known patterns, not a new security model: mandatory access control without trusted downgrade, cross-domain rebuild rather than copy, per-item approval bound to a content hash, a closed capability surface, idempotent effects, and read/act separation with the plan fixed before untrusted content is read. The full text is in [`spec/00-gaos-engineering-spec.md`](spec/00-gaos-engineering-spec.md).
+A short specification for running one person's work with AI agents such that no agent can take an irreversible action. It is an integration of known patterns, not a new security model: mandatory access control without trusted downgrade, cross-domain rebuild rather than copy, per-item approval bound to a content hash, a closed capability surface, idempotent effects, and read/act separation with the plan fixed before untrusted content is read. The full text is in [`spec/00-governed-agentic-operating-model.md`](spec/00-governed-agentic-operating-model.md).
 
 ## What it claims
 
@@ -13,11 +13,11 @@ A short specification for running one person's work with AI agents such that no 
 
 ## Status
 
-Version 0.2.0-draft. Draft. May change without notice.
+Version 0.2.1-draft. Draft. May change without notice.
 
 ## How to cite
 
-Cite an immutable tag, for example `v0.2.0-draft`, never `main`. R-26 of the specification requires that a conformance claim cite an immutable dated snapshot, and a branch is not one. [`CITATION.cff`](CITATION.cff) carries the current tag and its commit.
+Cite an immutable tag, for example `v0.2.1-draft`, never `main`. R-26 of the specification requires that a conformance claim cite an immutable dated snapshot, and a branch is not one. [`CITATION.cff`](CITATION.cff) carries the current tag and its commit.
 
 ## Lint
 
@@ -29,4 +29,6 @@ Sections 3 to 6 of the specification are under the Community Specification Licen
 
 ## Name
 
-`GAOS` stands for Governed Agentic Operating System: governed, because every irreversible action sits behind a human decision; agentic, because the work is done by agents; operating system, because the specification describes the environment the agents run inside rather than any one agent. It is a working token and may be replaced.
+Governed, because every external effect is a decision taken by a person, one item at a time: not by a policy engine, and never by the agent. Agentic, because the work itself is done by agents. Operating model, because the specification says who does what: agents draft and stage, a human lands and sends. It is a specification, not software.
+
+Earlier drafts used the working token `GAOS`; it was retired in 0.2.1 after colliding with an unrelated product of the same name.

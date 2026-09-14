@@ -1,9 +1,7 @@
-# GAOS: an opinionated engineering specification for a governed single-operator agentic workspace
+# Governed Agentic Operating Model: an opinionated engineering specification for a single-operator agentic workspace
 
-**Version:** 0.2.0-draft. **Date:** 2026-09-14. **Status:** Draft. May change without notice.
+**Version:** 0.2.1-draft. **Date:** 2026-09-14. **Status:** Draft. May change without notice.
 **Licence:** Community Specification License 1.0 for sections 3 to 6; CC-BY-4.0 for everything else.
-
-> `GAOS` is a working token, replaceable in one pass. Airlock, Interlock and Threshold are excluded: the MHRA runs an "AI Airlock" regulatory sandbox, "Interlock" names both security products and a ransomware group, and "Threshold" is overloaded by threshold cryptography.
 
 ---
 
@@ -205,6 +203,7 @@ Stated because a limits section that lists only what is addressed is marketing.
 | The claim that no comparable specification publishes per-control reach | False. Assurance cases and Common Criteria assumptions do. The claim now is that the field is mandatory and inline. |
 | Original-sounding presentation of the ICS term, the OLIR relation types, the SPICE bands and verification-method declaration | Attributed in section 0 and section 8. |
 | Workflows, decision records, governance, code of conduct, security policy, changelog | Process for a project that has one author and no adopters. Reinstated when a second person appears. |
+| The working token `GAOS` (removed in 0.2.1) | Collided with the Galaxy Agentic Operating System announced by Infrastructure AI in 2026. Airlock, Interlock and Threshold had already been excluded for collision reasons. Replaced by the descriptive name; "model" rather than "system" because this is a specification of who does what, not software. |
 
 ## 8. Attribution
 
