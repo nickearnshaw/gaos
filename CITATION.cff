@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Cite an immutable tag such as v0.2.0-draft, never main. R-26 of the specification requires it."
+title: "GAOS: an opinionated engineering specification for a governed single-operator agentic workspace"
+authors:
+  - family-names: Earnshaw
+    given-names: Nick
+    email: nick@earnshaw.org.uk
+version: 0.2.0-draft
+date-released: 2026-09-14
+commit: 09a50a5496ee7546c4d00dd2ba04e798fa895729
+repository-code: "https://github.com/nickearnshaw/gaos"
+url: "https://github.com/nickearnshaw/gaos/tree/v0.2.0-draft"
+license:
+  - Community-Spec-1.0
+  - CC-BY-4.0
+keywords:
+  - specification
+  - ai-agents
+  - prompt-injection
+  - security-architecture

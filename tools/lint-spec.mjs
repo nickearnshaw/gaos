@@ -1,13 +1,15 @@
 #!/usr/bin/env node
-// Mechanical checks for R-24 and R-25 of the GAOS specification.
+// Mechanical checks for R-24 and R-25 of the GAOS specification, plus
+// cross-checks that fixtures/ and conformance/ have not drifted from it.
 // Plain Node, ES module, no dependencies. Exits non-zero on any finding.
 
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const here = dirname(fileURLToPath(import.meta.url));
-const specPath = resolve(here, "..", "spec", "00-gaos-engineering-spec.md");
+const root = resolve(here, "..");
+const specPath = resolve(root, "spec", "00-gaos-engineering-spec.md");
 const lines = readFileSync(specPath, "utf8").split("\n");
 
 const findings = [];
@@ -84,6 +86,32 @@ if (start < 0) {
     }
   }
 }
+
+// 6. Every FX-nn defined in the spec has exactly one file in fixtures/, and
+//    every fixture file names an FX-nn the spec defines, with a matching id field.
+const specFx = new Set([...seen.keys()].filter((k) => k.startsWith("FX-")));
+const specR = [...seen.keys()].filter((k) => k.startsWith("R-"));
+const fixtureFiles = readdirSync(resolve(root, "fixtures")).filter((f) => /^FX-\d{2}-.*\.md$/.test(f));
+const fileFx = new Map();
+for (const f of fixtureFiles) {
+  const id = f.match(/^(FX-\d{2})/)[1];
+  if (fileFx.has(id)) report(id, `two fixture files: ${fileFx.get(id)} and ${f}`);
+  fileFx.set(id, f);
+  const body = readFileSync(resolve(root, "fixtures", f), "utf8");
+  const idField = body.match(/^- `id`: (\S+)/m);
+  if (!idField) report(id, `${f} has no id field`);
+  else if (idField[1] !== id) report(id, `${f} declares id ${idField[1]}`);
+  if (!specFx.has(id)) report(id, `${f} exists but the spec defines no ${id}`);
+}
+for (const id of specFx) if (!fileFx.has(id)) report(id, "defined in the spec but has no file in fixtures/");
+
+// 7. The ICS template has one row per R-nn in the spec, and no others.
+const ics = readFileSync(resolve(root, "conformance", "00-ics-template.md"), "utf8");
+const rows = [...ics.matchAll(/^\| (R-\d{2}) \|/gm)].map((m) => m[1]);
+for (const id of specR) if (!rows.includes(id)) report(id, "has no row in conformance/00-ics-template.md");
+for (const id of rows) if (!seen.has(id)) report(id, "has a row in the ICS template but is not defined in the spec");
+const dupRows = rows.filter((id, i) => rows.indexOf(id) !== i);
+for (const id of new Set(dupRows)) report(id, "has more than one row in the ICS template");
 
 if (findings.length) {
   for (const f of findings) console.log(f);

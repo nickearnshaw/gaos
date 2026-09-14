@@ -17,11 +17,11 @@ Version 0.2.0-draft. Draft. May change without notice.
 
 ## How to cite
 
-Cite an immutable tag, for example `v0.2.0-draft`, never `main`. R-26 of the specification requires that a conformance claim cite an immutable dated snapshot, and a branch is not one.
+Cite an immutable tag, for example `v0.2.0-draft`, never `main`. R-26 of the specification requires that a conformance claim cite an immutable dated snapshot, and a branch is not one. [`CITATION.cff`](CITATION.cff) carries the current tag and its commit.
 
 ## Lint
 
-`npm run lint` checks R-24 and R-25 mechanically: every requirement carries an evidence method, every machine-checked control carries a reach statement and a failure mode, MUST and its siblings appear only where the evidence method permits them, identifiers are unique, and no em dashes have crept in. Plain Node, no dependencies.
+`npm run lint` checks R-24 and R-25 mechanically: every requirement carries an evidence method, every machine-checked control carries a reach statement and a failure mode, MUST and its siblings appear only where the evidence method permits them, identifiers are unique, no em dashes have crept in, every fixture the specification defines has exactly one matching file in `fixtures/`, and the conformance template has one row per requirement. Plain Node, no dependencies.
 
 ## Licence
 
