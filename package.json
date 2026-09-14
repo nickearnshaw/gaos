@@ -1,0 +1,9 @@
+{
+  "name": "gaos",
+  "version": "0.2.0-draft",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "node tools/lint-spec.mjs"
+  }
+}
